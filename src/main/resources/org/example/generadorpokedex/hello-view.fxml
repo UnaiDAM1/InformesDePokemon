@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="TOP_CENTER" prefHeight="500.0" prefWidth="400.0" spacing="20.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.generadorpokedex.HelloController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+   <children>
+      <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../images/PokemonLetras.png" />
+         </image>
+      </ImageView>
+      <Label text="Escoja el parámetro para el informe:" />
+      <Button fx:id="botonTipo" mnemonicParsing="false" onAction="#buttonTipo" prefHeight="30.0" prefWidth="150.0" text="Tipo">
+         <VBox.margin>
+            <Insets top="20.0" />
+         </VBox.margin>
+      </Button>
+      <Button fx:id="botonGeneracion" mnemonicParsing="false" onAction="#buttonGeneracion" prefHeight="30.0" prefWidth="150.0" text="Generación">
+         <VBox.margin>
+            <Insets top="20.0" />
+         </VBox.margin>
+      </Button>
+      <Button mnemonicParsing="false" onAction="#buttonTodos" prefHeight="30.0" prefWidth="150.0" text="Todos">
+         <VBox.margin>
+            <Insets top="20.0" />
+         </VBox.margin>
+      </Button>
+      <Button mnemonicParsing="false" onAction="#buttonAbrir" text="Abrir informe" />
+   </children>
+</VBox>
