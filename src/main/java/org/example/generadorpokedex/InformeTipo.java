@@ -27,36 +27,54 @@ public class InformeTipo {
     @FXML
     private ComboBox<String> tipo;
 
+    @FXML
+    private ComboBox<String> fase;
+
 
     @FXML
     public void initialize() {
         tipo.getItems().addAll("Agua", "Fuego", "Planta", "Bicho", "Dragón", "Eléctrico", "Tierra",
                 "Fantasma", "Hada", "Hielo", "Lucha", "Normal", "Psíquico", "Roca", "Siniestro", "Veneno", "Volador");
+
+        fase.getItems().addAll("Base", "Primera", "Segunda");
     }
 
     public void buttonGenerar(ActionEvent actionEvent) {
-        try
-        {
+        try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection connection = DriverManager.getConnection("jdbc:mysql://localhost/pokemondb", "unai", "1234");
 
             Map parametros = new HashMap();
             parametros.put("Tipo", tipo.getSelectionModel().getSelectedItem());
+            switch (fase.getSelectionModel().getSelectedItem()) {
+                case "Base":
+                    parametros.put("FaseEv", 1);
+                    break;
+                case "Primera":
+                    parametros.put("FaseEv", 2);
+                    break;
+                case "Segunda":
+                    parametros.put("FaseEv", 3);
+                    break;
+                default:
+                    break;
+            }
+
 
             System.out.println(parametros);
             JasperPrint print = JasperFillManager.fillReport("src\\main\\resources\\Informes\\pokedexPorTipo1.jasper", parametros, connection);
             JasperExportManager.exportReportToPdfFile(print, "src\\main\\resources\\InformesPDF\\Informe_pokedexTipos.pdf");
-        }
-        catch (Throwable e){
+        } catch (Throwable e) {
             e.printStackTrace();
         }
     }
+
     public void buttonAbrir(ActionEvent actionEvent) {
         URL url = InformeTipo.class.getResource("/InformesPDF/Informe_pokedexTipos.pdf");
         if (url != null) {
             try {
                 File file = new File(url.toURI());
-                if (Desktop.isDesktopSupported()){
+                if (Desktop.isDesktopSupported()) {
                     Desktop.getDesktop().open(file);
                 }
             } catch (URISyntaxException e) {
@@ -66,6 +84,7 @@ public class InformeTipo {
             }
         }
     }
+
     public void buttonVolver(ActionEvent actionEvent) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("hello-view.fxml"));
         Parent root = loader.load();

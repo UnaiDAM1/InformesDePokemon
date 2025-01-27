@@ -20,6 +20,11 @@ FROM pokemon
 		<property name="com.jaspersoft.studio.field.label" value="Generacion"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="pokemon"/>
 	</field>
+	<field name="FaseEvolutiva" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="FaseEvolutiva"/>
+		<property name="com.jaspersoft.studio.field.label" value="FaseEvolutiva"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="pokemon"/>
+	</field>
 	<field name="Tipo1" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.name" value="Tipo1"/>
 		<property name="com.jaspersoft.studio.field.label" value="Tipo1"/>
@@ -83,33 +88,39 @@ FROM pokemon
 			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="6b58addc-a63e-4947-8f09-bcd0b8ec30df"/>
 			<property name="com.jaspersoft.studio.unit.width" value="px"/>
 		</element>
-		<element kind="staticText" uuid="09ff970a-2f65-448e-809c-21ecae51d0db" x="340" y="0" width="100" height="30">
+		<element kind="staticText" uuid="09ff970a-2f65-448e-809c-21ecae51d0db" x="360" y="0" width="100" height="30">
 			<text><![CDATA[HP]]></text>
 			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="2ef00f29-9010-4cf2-89eb-bca116c9aa03"/>
-			<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+			<property name="com.jaspersoft.studio.unit.x" value="px"/>
 		</element>
-		<element kind="staticText" uuid="cf121422-a725-4786-9cde-f700c103c0b8" x="390" y="0" width="100" height="30">
+		<element kind="staticText" uuid="cf121422-a725-4786-9cde-f700c103c0b8" x="410" y="0" width="100" height="30">
 			<text><![CDATA[Ataque]]></text>
 			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="66ba2332-3098-45ba-b61b-8d0e42c37d71"/>
 			<property name="com.jaspersoft.studio.unit.x" value="px"/>
 		</element>
-		<element kind="staticText" uuid="a89c66bc-4dc2-4cc5-830f-891792a480cf" x="440" y="0" width="100" height="30">
+		<element kind="staticText" uuid="a89c66bc-4dc2-4cc5-830f-891792a480cf" x="460" y="0" width="100" height="30">
 			<text><![CDATA[Defensa]]></text>
 			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="cdd0f543-af73-48c1-914f-01dbe99485fc"/>
 			<property name="com.jaspersoft.studio.unit.x" value="px"/>
 		</element>
-		<element kind="staticText" uuid="3a2c4dd9-877e-48b0-a03e-a322bc4f52ca" x="490" y="0" width="52" height="30">
+		<element kind="staticText" uuid="3a2c4dd9-877e-48b0-a03e-a322bc4f52ca" x="510" y="0" width="52" height="30">
 			<text><![CDATA[Velocidad]]></text>
 			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="9586adfa-c5f7-4c4e-a5e3-4a7c691172a5"/>
 			<property name="com.jaspersoft.studio.unit.x" value="px"/>
 		</element>
-		<element kind="staticText" uuid="c632f8ca-0c77-4cb5-b009-a4c8532c08b9" x="210" y="0" width="100" height="30">
+		<element kind="staticText" uuid="c632f8ca-0c77-4cb5-b009-a4c8532c08b9" x="250" y="0" width="100" height="30">
 			<text><![CDATA[Tipo1]]></text>
 			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="9202d2be-03e2-4f29-b09b-3508804c45cd"/>
+			<property name="com.jaspersoft.studio.unit.x" value="px"/>
 		</element>
-		<element kind="staticText" uuid="e828c73b-65a6-42a1-ae6e-a441d3d14540" x="260" y="0" width="100" height="30">
+		<element kind="staticText" uuid="e828c73b-65a6-42a1-ae6e-a441d3d14540" x="300" y="0" width="90" height="30">
 			<text><![CDATA[Tipo2]]></text>
 			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="06e38a05-d74f-4fb2-a4bc-c0efec10bcb3"/>
+			<property name="com.jaspersoft.studio.unit.x" value="px"/>
+		</element>
+		<element kind="staticText" uuid="69a73c8c-ba5b-4eb9-95f8-295a092401f3" x="197" y="0" width="100" height="30">
+			<text><![CDATA[Fase]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="3fbb7ebe-f05f-437a-9579-ad605e8ce126"/>
 		</element>
 	</columnHeader>
 	<detail>
@@ -129,34 +140,39 @@ FROM pokemon
 				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="6b58addc-a63e-4947-8f09-bcd0b8ec30df"/>
 				<property name="com.jaspersoft.studio.unit.x" value="px"/>
 			</element>
-			<element kind="textField" uuid="b02f03db-0abb-4f46-9ff3-7f6569ab687c" x="340" y="-1" width="100" height="30">
+			<element kind="textField" uuid="b02f03db-0abb-4f46-9ff3-7f6569ab687c" x="360" y="-1" width="100" height="30">
 				<expression><![CDATA[$F{HP}]]></expression>
 				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="2ef00f29-9010-4cf2-89eb-bca116c9aa03"/>
 				<property name="com.jaspersoft.studio.unit.x" value="px"/>
 			</element>
-			<element kind="textField" uuid="6490700f-5286-477b-8ddc-98825427a871" x="390" y="-1" width="100" height="30">
+			<element kind="textField" uuid="6490700f-5286-477b-8ddc-98825427a871" x="410" y="-1" width="100" height="30">
 				<expression><![CDATA[$F{Ataque}]]></expression>
 				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="66ba2332-3098-45ba-b61b-8d0e42c37d71"/>
 				<property name="com.jaspersoft.studio.unit.x" value="px"/>
 			</element>
-			<element kind="textField" uuid="f282575c-8e1b-47eb-b987-c8b2964d23e6" x="440" y="-1" width="58" height="30">
+			<element kind="textField" uuid="f282575c-8e1b-47eb-b987-c8b2964d23e6" x="460" y="-1" width="58" height="30">
 				<expression><![CDATA[$F{Defensa}]]></expression>
 				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="cdd0f543-af73-48c1-914f-01dbe99485fc"/>
 				<property name="com.jaspersoft.studio.unit.x" value="px"/>
 			</element>
-			<element kind="textField" uuid="6df6da62-3045-4f9f-803c-818e1c021671" x="490" y="-1" width="70" height="30">
+			<element kind="textField" uuid="6df6da62-3045-4f9f-803c-818e1c021671" x="510" y="-1" width="70" height="30">
 				<expression><![CDATA[$F{Velocidad}]]></expression>
 				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="9586adfa-c5f7-4c4e-a5e3-4a7c691172a5"/>
 				<property name="com.jaspersoft.studio.unit.x" value="px"/>
 			</element>
-			<element kind="textField" uuid="9aa8af40-3834-4304-987c-c507fe92f6d7" x="210" y="-1" width="100" height="30">
+			<element kind="textField" uuid="9aa8af40-3834-4304-987c-c507fe92f6d7" x="250" y="-1" width="100" height="30">
 				<expression><![CDATA[$F{Tipo1}]]></expression>
 				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="9202d2be-03e2-4f29-b09b-3508804c45cd"/>
 				<property name="com.jaspersoft.studio.unit.x" value="px"/>
 			</element>
-			<element kind="textField" uuid="c31440fe-5f3c-4e3f-9245-5ad72d87503d" x="260" y="-1" width="100" height="30" linkType="None" linkTarget="Self">
+			<element kind="textField" uuid="c31440fe-5f3c-4e3f-9245-5ad72d87503d" x="300" y="-1" width="100" height="30" linkType="None" linkTarget="Self">
 				<expression><![CDATA[$F{Tipo2}]]></expression>
 				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="06e38a05-d74f-4fb2-a4bc-c0efec10bcb3"/>
+				<property name="com.jaspersoft.studio.unit.x" value="px"/>
+			</element>
+			<element kind="textField" uuid="0914be28-385a-462c-bc5f-14521b9ffed4" x="200" y="0" width="100" height="30">
+				<expression><![CDATA[$F{FaseEvolutiva}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="3fbb7ebe-f05f-437a-9579-ad605e8ce126"/>
 				<property name="com.jaspersoft.studio.unit.x" value="px"/>
 			</element>
 		</band>

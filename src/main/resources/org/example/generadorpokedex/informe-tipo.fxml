@@ -14,8 +14,8 @@
             <Image url="@../../../images/PokemonLetras.png" />
          </image>
       </ImageView>
-      <Button layoutX="125.0" layoutY="280.0" mnemonicParsing="false" onAction="#buttonGenerar" prefHeight="30.0" prefWidth="150.0" text="Generar informe" />
-      <Button layoutX="125.0" layoutY="340.0" mnemonicParsing="false" onAction="#buttonAbrir" prefHeight="30.0" prefWidth="150.0" text="Ver informe" />
+      <Button layoutX="125.0" layoutY="310.0" mnemonicParsing="false" onAction="#buttonGenerar" prefHeight="30.0" prefWidth="150.0" text="Generar informe" />
+      <Button layoutX="125.0" layoutY="360.0" mnemonicParsing="false" onAction="#buttonAbrir" prefHeight="30.0" prefWidth="150.0" text="Ver informe" />
       <ImageView fitHeight="80.0" fitWidth="80.0" layoutX="310.0" layoutY="60.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../images/energiasPlanta.png" />
@@ -66,8 +66,9 @@
             <Image url="@../../../images/energiasDragon.png" />
          </image>
       </ImageView>
-      <ComboBox fx:id="tipo" layoutX="125.0" layoutY="220.0" prefHeight="30.0" prefWidth="150.0" />
+      <ComboBox fx:id="tipo" layoutX="125.0" layoutY="210.0" prefHeight="30.0" prefWidth="150.0" promptText="Seleccione un tipo" />
       <Label layoutX="100.0" layoutY="69.0" prefHeight="150.0" prefWidth="200.0" text="El tipo es una característica que poseen los Pokémon y los movimientos desarrollados por estos que permite su clasificación y crean relaciones entre ellos basadas en las ventajas y desventajas." textAlignment="CENTER" wrapText="true" />
       <Button fx:id="botonVolver" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#buttonVolver" text="Volver" />
+      <ComboBox fx:id="fase" layoutX="125.0" layoutY="260.0" prefHeight="30.0" prefWidth="150.0" promptText="Seleccione una fase" />
    </children>
 </AnchorPane>
