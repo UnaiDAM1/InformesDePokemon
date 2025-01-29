@@ -22,13 +22,13 @@ import java.sql.DriverManager;
 import java.util.HashMap;
 import java.util.Map;
 
-/*
+/**
  * Clase InformeTipo
  * Clase que genera los informes por el parámetro Tipo y Fase.
  *
- * @version: 1.0
+ * @version 1.0
  *
- * @autor: Unai Nieto
+ * @author Unai Nieto
  *
  */
 

@@ -22,13 +22,13 @@ import java.sql.DriverManager;
 import java.util.HashMap;
 import java.util.Map;
 
-/*
+/**
  * Clase InformeGeneracion
  * Clase que genera los informes por el parámetro Generación.
  *
- * @version: 1.0
+ * @version 1.0
  *
- * @autor: Unai Nieto
+ * @author Unai Nieto
  *
  */
 
