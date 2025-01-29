@@ -22,15 +22,29 @@ import java.sql.DriverManager;
 import java.util.HashMap;
 import java.util.Map;
 
+/*
+ * Clase InformeGeneracion
+ * Clase que genera los informes por el parámetro Generación.
+ *
+ * @version: 1.0
+ *
+ * @autor: Unai Nieto
+ *
+ */
+
 public class InformeGeneracion {
     @FXML
     private ComboBox<String> generacion;
 
+    // Metodo initialize que arranca la clase
     @FXML
     public void initialize() {
+        // Inicialización de los valores del ComboBox
         generacion.getItems().addAll("Primera", "Segunda", "Tercera", "Cuarta");
     }
 
+    // Metodo asociado al botón de "Generar informe" el cual genera un pdf en la carpeta del mismo proyecto
+    // ubicada en  resources/InformesPDF con el contenido de la base de datos en función del parámetro en el.
     public void buttonGenerar(ActionEvent actionEvent) {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
@@ -61,6 +75,7 @@ public class InformeGeneracion {
         }
     }
 
+    // Metodo asociado al botón de "Ver informe" el cual abre el informe generado por el botón "Generar informe"
     public void buttonAbrir(ActionEvent actionEvent) {
         URL url = InformeTipo.class.getResource("/InformesPDF/Informe_pokedexGeneracion.pdf");
         if (url != null) {
@@ -76,6 +91,8 @@ public class InformeGeneracion {
             }
         }
     }
+
+    // Metodo para volver a la actividad principal y cerrar la actual
     public void buttonVolver(ActionEvent actionEvent) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("hello-view.fxml"));
         Parent root = loader.load();

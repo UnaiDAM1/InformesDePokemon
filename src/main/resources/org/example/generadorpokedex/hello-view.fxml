@@ -17,18 +17,18 @@
             <Image url="@../../../images/PokemonLetras.png" />
          </image>
       </ImageView>
-      <Label text="Escoja el parámetro para el informe:" />
-      <Button fx:id="botonTipo" mnemonicParsing="false" onAction="#buttonTipo" prefHeight="30.0" prefWidth="150.0" text="Tipo">
+      <Label text="¿Qué tipo de informe desea?" />
+      <Button fx:id="botonTipo" mnemonicParsing="false" onAction="#buttonTipo" prefHeight="30.0" prefWidth="150.0" text="Informe por tipo">
          <VBox.margin>
             <Insets top="20.0" />
          </VBox.margin>
       </Button>
-      <Button fx:id="botonGeneracion" mnemonicParsing="false" onAction="#buttonGeneracion" prefHeight="30.0" prefWidth="150.0" text="Generación">
+      <Button fx:id="botonGeneracion" mnemonicParsing="false" onAction="#buttonGeneracion" prefHeight="30.0" prefWidth="150.0" text="Informe por generación">
          <VBox.margin>
             <Insets top="20.0" />
          </VBox.margin>
       </Button>
-      <Button mnemonicParsing="false" onAction="#buttonTodos" prefHeight="30.0" prefWidth="150.0" text="Todos">
+      <Button mnemonicParsing="false" onAction="#buttonTodos" prefHeight="30.0" prefWidth="150.0" text="Informe general">
          <VBox.margin>
             <Insets top="20.0" />
          </VBox.margin>

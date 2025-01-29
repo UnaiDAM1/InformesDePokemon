@@ -23,16 +23,33 @@ import java.sql.DriverManager;
 import java.util.HashMap;
 import java.util.Map;
 
+/*
+ * Clase HelloController
+ * Clase encargada del diseño y control de la primera vista que aparece al iniciar la app se encarga de
+ * llevarte a las diferentes clases que generan los informes por parámetros, también puede generar un
+ * informe general y abrirlo
+ *
+ * @version: 1.0
+ *
+ * @autor: Unai Nieto
+ *
+ */
+
 public class HelloController {
     @FXML
     Button botonTipo;
 
     @FXML
     Button botonGeneracion;
+
+    // Metodo initialize que arranca la clase
     @FXML
     public void initialize(){
 
     }
+
+    // Metodo asociado al botón de "Informe general" el cual genera un pdf en la carpeta del mismo proyecto
+    // ubicada en  resources/InformesPDF con el contenido de la base de datos en el.
     public void buttonTodos(ActionEvent actionEvent) {
         try
         {
@@ -46,6 +63,8 @@ public class HelloController {
             e.printStackTrace();
         }
     }
+
+    // Metodo asociado al botón de "Informe por tipo" que lanza la clase informeTipo y cierra HelloController
     public void buttonTipo(ActionEvent actionEvent) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("informe-tipo.fxml"));
         Parent root = loader.load();
@@ -59,6 +78,7 @@ public class HelloController {
         stage.showAndWait();
     }
 
+    // Metodo asociado al botón de "Informe por tipo" que lanza la clase informeGeneracion y cierra HelloController
     public void buttonGeneracion(ActionEvent actionEvent) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("informe-generacion.fxml"));
         Parent root = loader.load();
@@ -72,6 +92,7 @@ public class HelloController {
         stage.showAndWait();
     }
 
+    // Metodo asociado al botón de "Ver informe" el cual abre el informe generado por el botón "Informe general"
     public void buttonAbrir(ActionEvent actionEvent) {
         URL url = InformeTipo.class.getResource("/InformesPDF/Informe_pokedexTodos.pdf");
         if (url != null) {
