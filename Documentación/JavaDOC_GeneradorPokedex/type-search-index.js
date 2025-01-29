@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"org.example.generadorpokedex","l":"HelloApplication"},{"p":"org.example.generadorpokedex","l":"HelloController"},{"p":"org.example.generadorpokedex","l":"InformeGeneracion"},{"p":"org.example.generadorpokedex","l":"InformeTipo"}];updateSearchResults();
