@@ -12,6 +12,11 @@
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
     </padding>
    <children>
+      <VBox alignment="TOP_RIGHT" prefHeight="20.0" prefWidth="360.0">
+         <children>
+            <Button contentDisplay="RIGHT" mnemonicParsing="false" onAction="#buttonAyuda" text="Ayuda" />
+         </children>
+      </VBox>
       <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../images/PokemonLetras.png" />

@@ -1,11 +1,15 @@
 package org.example.generadorpokedex;
 
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyCodeCombination;
+import javafx.scene.input.KeyCombination;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import net.sf.jasperreports.engine.JasperExportManager;
@@ -40,6 +44,46 @@ public class HelloController {
      */
     @FXML
     public void initialize() {
+        Platform.runLater(this::agregarAtajos);
+    }
+
+    private void agregarAtajos() {
+        // Obtener la escena desde un botón (cuando ya está cargada)
+        Platform.runLater(() -> {
+            Scene scene = botonTipo.getScene();
+            if (scene != null) {
+                // Definir atajos
+                scene.getAccelerators().put(new KeyCodeCombination(KeyCode.T, KeyCombination.CONTROL_DOWN),
+                        () -> {
+                            try {
+                                buttonTipo(null);
+                            } catch (IOException e) {
+                                e.printStackTrace();
+                            }
+                        });
+
+                scene.getAccelerators().put(new KeyCodeCombination(KeyCode.G, KeyCombination.CONTROL_DOWN),
+                        () -> {
+                            try {
+                                buttonGeneracion(null);
+                            } catch (IOException e) {
+                                e.printStackTrace();
+                            }
+                        });
+
+                scene.getAccelerators().put(new KeyCodeCombination(KeyCode.A, KeyCombination.CONTROL_DOWN),
+                        () -> {
+                            try {
+                                buttonAyuda(null);
+                            } catch (IOException e) {
+                                e.printStackTrace();
+                            }
+                        });
+
+                scene.getAccelerators().put(new KeyCodeCombination(KeyCode.O, KeyCombination.CONTROL_DOWN),
+                        () -> buttonAbrir(null));
+            }
+        });
     }
 
     /**
@@ -112,6 +156,24 @@ public class HelloController {
             } catch (URISyntaxException | IOException e) {
                 throw new RuntimeException(e);
             }
+        }
+    }
+
+    public void buttonAyuda(ActionEvent actionEvent) throws IOException {
+        try {
+            // Ruta al archivo .java compilado o al .jar que deseas ejecutar
+            String rutaJava = "src/main/java/org/example/generadorpokedex/AyudaGeneral.java";  // Puedes reemplazar esto con el archivo compilado .class si es necesario
+
+            // Comando para ejecutar el archivo Java
+            ProcessBuilder builder = new ProcessBuilder("java", rutaJava); // Esto asume que tienes el archivo .class o .jar y puedes usar "java" para ejecutarlo
+            builder.inheritIO();  // Esto permite que la salida de la consola se vea en tu terminal
+            Process proceso = builder.start();  // Inicia el proceso
+
+            // Espera a que termine el proceso (si es necesario)
+            proceso.waitFor();
+        } catch (IOException | InterruptedException e) {
+            e.printStackTrace();
+            throw new RuntimeException("Error al ejecutar el archivo Java: " + e.getMessage(), e);
         }
     }
 }

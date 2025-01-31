@@ -12,7 +12,8 @@ import java.io.IOException;
  * @version 1.0
  * @author Unai Nieto
  */
-public class HelloApplication extends Application {
+public class
+HelloApplication extends Application {
 
     /**
      * Método que inicia la aplicación, carga la interfaz gráfica desde un archivo FXML,
