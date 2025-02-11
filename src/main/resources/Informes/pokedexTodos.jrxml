@@ -58,10 +58,10 @@ FROM pokemon
 	<background height="1" splitType="Stretch"/>
 	<title height="180" splitType="Stretch">
 		<element kind="image" uuid="6be59a73-c035-4517-b69d-770de71109a9" x="420" y="-17" width="190" height="175">
-			<expression><![CDATA["C:/Users/ADMIN/IdeaProjects/GeneradorPokedex/src/main/resources/images/PIKACHU.png"]]></expression>
+			<expression><![CDATA["GENGAR.png"]]></expression>
 		</element>
 		<element kind="image" uuid="6db8b6a1-07f2-44b2-86fd-3e89a4be2fe0" x="-30" y="-17" width="170" height="175">
-			<expression><![CDATA["C:/Users/ADMIN/IdeaProjects/GeneradorPokedex/src/main/resources/images/GENGAR.png"]]></expression>
+			<expression><![CDATA["PIKACHU.png"]]></expression>
 		</element>
 		<element kind="staticText" uuid="7aad0eaa-d8cb-4a41-8b9f-165bfe92d658" x="89" y="30" width="383" height="120" fontSize="70.0" hTextAlign="Center">
 			<text><![CDATA[POKÉDEX]]></text>

@@ -82,8 +82,8 @@ public class InformeGeneracion {
             }
             // Se genera el informe utilizando JasperReports y se exporta a PDF
             System.out.println(parametros);
-            JasperPrint print = JasperFillManager.fillReport("src\\main\\resources\\Informes\\pokedexPorGeneración.jasper", parametros, connection);
-            JasperExportManager.exportReportToPdfFile(print, "src\\main\\resources\\InformesPDF\\Informe_pokedexGeneracion.pdf");
+            JasperPrint print = JasperFillManager.fillReport("src/main/resources/Informes/pokedexPorGeneración.jasper", parametros, connection);
+            JasperExportManager.exportReportToPdfFile(print, "src/main/resources/InformesPDF/Informe_pokedexGeneracion.pdf");
         } catch (Throwable e) {
             // Se captura cualquier excepción y se imprime el stack trace
             e.printStackTrace();
